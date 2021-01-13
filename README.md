@@ -92,7 +92,12 @@ cv2.destroyAllwindows()
 output:
 ![image](https://user-images.githubusercontent.com/72559755/104432663-3dd5ed80-55af-11eb-9d17-9acd29b68ce7.png)
 
-4.Convert color image into gray and binary image.
+4.Convert color image into grayscale and binary image.
+grayscale image:Grayscale is a range of monochromatic shades from black to white. 
+Therefore, a grayscale image contains only shades of gray and no color.
+binary image: A binary image is the type of image where each pixel is black opr white/pixel 0 or 1.here 0 represent white pixel.
+A method called threshold() is used to convert grayscale images to binary image.
+
 import cv2
 img = cv2.imread("nature1.png")
 grey=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -103,6 +108,32 @@ ret, bw_img = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
 cv2.imshow("Binary Image",bw_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+output:
+![image](https://user-images.githubusercontent.com/72559755/104434117-dd47b000-55b0-11eb-8d06-0295418893ca.png)
+
+5.Convert color image into different color space.
+
+import cv2
+img = cv2.imread("nature1.png")
+gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
+luv=cv2.cvtColor(img,cv2.COLOR_BGR2LUV)
+lab=cv2.cvtColor(img,cv2.COLOR_BGR2Lab)
+xyz=cv2.cvtColor(img,cv2.COLOR_BGR2XYZ)
+
+cv2.imshow("GRAY Image",gray)
+cv2.waitKey(0)
+cv2.imshow("HSV Image",hsv)
+cv2.waitKey(0)
+cv2.imshow("LUV Image",luv)
+cv2.waitKey(0)
+cv2.imshow("LAB Image",lab)
+cv2.waitKey(0)
+cv2.imshow("XYZ Image",xyz)
+cv2.waitKey(0)
+
+cv2.destroyAllWindows()
+
 
 
 
