@@ -58,6 +58,9 @@ output:
 
 program3:Develop a program to find sum and mean of set of images.
 Create n number of images and read from directory and perform the operation.
+mean:mean value gives the contribution of individual pixel intensity for the entire image.
+sum:adds the value of each pixel in one of the input images with the corresponding pixel 
+in the other input image and returns the sum in the corresponding pixel of the output image.
 
 import cv2
 import os
@@ -86,5 +89,20 @@ print(mean)
 
 cv2.waitKey()
 cv2.destroyAllwindows()
+output:
+![image](https://user-images.githubusercontent.com/72559755/104432663-3dd5ed80-55af-11eb-9d17-9acd29b68ce7.png)
+
+4.Convert color image into gray and binary image.
+import cv2
+img = cv2.imread("nature1.png")
+grey=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+cv2.imshow("Binary Image",grey)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+ret, bw_img = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
+cv2.imshow("Binary Image",bw_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
 
 
