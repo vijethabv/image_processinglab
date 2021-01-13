@@ -17,7 +17,7 @@ output:
 ![image](https://user-images.githubusercontent.com/72559755/104423701-6dcbc380-55a4-11eb-921a-714a1cfabcda.png)
 ![image](https://user-images.githubusercontent.com/72559755/104424001-c9964c80-55a4-11eb-9310-b1069ad1f8e8.png)
 
-2.Develop a program to perform linear transformation on image(scaling and rotation).
+program2:Develop a program to perform linear transformation on image(scaling and rotation).
 linear transformation:is type of gray level transformation that is used for image enhancement
 it is a spatial domain method.
 it is used for manipulation of an image so that result is more suitable than original for a specific application.
@@ -55,3 +55,36 @@ cv2.imshow('result.jpg', res)
 cv2.waitKey(0)
 output:
 ![image](https://user-images.githubusercontent.com/72559755/104427563-635ff880-55a9-11eb-9393-b2eb2d058c7c.png)
+
+program3:Develop a program to find sum and mean of set of images.
+Create n number of images and read from directory and perform the operation.
+
+import cv2
+import os
+path = "D:\imp_for_ip"
+imgs=[]
+dirs=os.listdir(path)
+
+for file in dirs:
+    fpat=path+"\\"+file
+    imgs.append(cv2.imread(fpat))
+    
+i=0
+sum_img=[]
+for sum_img in imgs:
+    read_imgs=imgs[i]
+    sum_img=sum_img+read_imgs
+    #cv2.imshow(dirs[i],imgs[i])
+    i=i+1
+print(i)
+cv2.imshow('sum',sum_img)
+print(sum_img)
+
+cv2.imshow('mean',sum_img/i)
+mean=(sum_img/i)
+print(mean)
+
+cv2.waitKey()
+cv2.destroyAllwindows()
+
+
