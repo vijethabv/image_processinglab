@@ -112,6 +112,8 @@ output:
 ![image](https://user-images.githubusercontent.com/72559755/104434117-dd47b000-55b0-11eb-8d06-0295418893ca.png)
 
 5.Convert color image into different color space.
+color spaces in opencv: Colorspace area way to represent the color channels present in the image that gives the image that particular hue.
+There are several different colorspaces and each has its own significance
 
 import cv2
 img = cv2.imread("nature1.png")
@@ -133,6 +135,26 @@ cv2.imshow("XYZ Image",xyz)
 cv2.waitKey(0)
 
 cv2.destroyAllWindows()
+
+output:
+![image](https://user-images.githubusercontent.com/72559755/104435276-3401b980-55b2-11eb-86a2-5fc4d555f5e3.png)
+
+6.Develop a program top create an image from 2d array.
+
+import numpy as np
+from PIL import Image
+import cv2 as c
+array = np.zeros([100, 200, 3], dtype=np.uint8)
+array[:,:100] = [255, 128, 0] #Orange left side
+array[:,100:] = [0, 0, 255]   #Blue right side
+
+img = Image.fromarray(array)
+img.save('testrgb.png')
+img.show()
+c.waitKey(0)
+
+output:
+
 
 
 
