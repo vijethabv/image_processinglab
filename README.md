@@ -1,10 +1,12 @@
 # image_processinglab
 program1:Develop a program to display grayscale image using read and write operation.
+
 grayscale image:Grayscale is a range of monochromatic shades from black to white. 
 Therefore, a grayscale image contains only shades of gray and no color.
 to save image:cv2.imwrite()
 to show image:cv2.imshow()
 destroy all windows:cv2.destroyAllWindows()
+
 import cv2
 image=cv2.imread('ip images1.png')
 grey_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) 
@@ -18,6 +20,7 @@ output:
 ![image](https://user-images.githubusercontent.com/72559755/104424001-c9964c80-55a4-11eb-9310-b1069ad1f8e8.png)
 
 program2:Develop a program to perform linear transformation on image(scaling and rotation).
+
 linear transformation:is type of gray level transformation that is used for image enhancement
 it is a spatial domain method.
 it is used for manipulation of an image so that result is more suitable than original for a specific application.
@@ -58,6 +61,7 @@ output:
 
 program3:Develop a program to find sum and mean of set of images.
 Create n number of images and read from directory and perform the operation.
+
 mean:mean value gives the contribution of individual pixel intensity for the entire image.
 sum:adds the value of each pixel in one of the input images with the corresponding pixel 
 in the other input image and returns the sum in the corresponding pixel of the output image.
@@ -93,6 +97,7 @@ output:
 ![image](https://user-images.githubusercontent.com/72559755/104432663-3dd5ed80-55af-11eb-9d17-9acd29b68ce7.png)
 
 4.Convert color image into grayscale and binary image.
+
 grayscale image:Grayscale is a range of monochromatic shades from black to white. 
 Therefore, a grayscale image contains only shades of gray and no color.
 binary image: A binary image is the type of image where each pixel is black opr white/pixel 0 or 1.here 0 represent white pixel.
@@ -112,6 +117,7 @@ output:
 ![image](https://user-images.githubusercontent.com/72559755/104434117-dd47b000-55b0-11eb-8d06-0295418893ca.png)
 
 5.Convert color image into different color space.
+
 color spaces in opencv: Colorspace area way to represent the color channels present in the image that gives the image that particular hue.
 There are several different colorspaces and each has its own significance
 
@@ -141,6 +147,12 @@ output:
 
 6.Develop a program top create an image from 2d array.
 
+NumPy: is a Python library used for working with arrays. It also has functions for working 
+in domain of linear algebra, fourier transform, and matrices.
+Python Imaging Library (PIL)  is a free and open-source additional library for the Python programming 
+language that adds support for opening, manipulating, and saving many different image file formats.
+The numpy.zeros() function returns a new array of given shape and type, with zeros.
+
 import numpy as np
 from PIL import Image
 import cv2 as c
@@ -154,6 +166,7 @@ img.show()
 c.waitKey(0)
 
 output:
+![image](https://user-images.githubusercontent.com/72559755/104436066-2698ff00-55b3-11eb-9c70-3521807e9429.png)
 
 
 
