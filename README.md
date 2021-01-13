@@ -92,7 +92,7 @@ mean=(sum_img/i)
 print(mean)
 
 cv2.waitKey()
-cv2.destroyAllwindows()
+cv2.destroyAllWindows()
 output:
 ![image](https://user-images.githubusercontent.com/72559755/104432663-3dd5ed80-55af-11eb-9d17-9acd29b68ce7.png)
 
@@ -167,6 +167,47 @@ c.waitKey(0)
 
 output:
 ![image](https://user-images.githubusercontent.com/72559755/104436066-2698ff00-55b3-11eb-9c70-3521807e9429.png)
+
+7.find sum of neighbourhood values of matrix
+
+import numpy as np
+
+M = [[1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]] 
+
+M = np.asarray(M)
+N = np.zeros(M.shape)
+
+def sumNeighbors(M,x,y):
+    l = []
+    for i in range(max(0,x-1),x+2):
+        for j in range(max(0,y-1),y+2):
+            try:
+                t = M[i][j]
+                l.append(t)
+            except IndexError:
+                pass
+    return sum(l)-M[x][y] 
+for i in range(M.shape[0]):
+    for j in range(M.shape[1]):
+        N[i][j] = sumNeighbors(M, i, j)
+
+print ("Original matrix:\n", M)
+print ("Summed neighbors matrix:\n", N)
+
+output:
+Original matrix:
+ [[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+Summed neighbors matrix:
+ [[11. 19. 13.]
+ [23. 40. 27.]
+ [17. 31. 19.]]
+
+
+
 
 
 
